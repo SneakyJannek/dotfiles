@@ -15,6 +15,8 @@ alias grep='grep --color=auto'
 alias bashrc='nvim ~/.bashrc && source ~/.bashrc'
 alias archwiki='wikiman -s arch'
 alias fman='compgen -c | fzf | xargs man'
+alias tree='tree -C'
+alias gtree='tree -I ".git" -a .'
 
 #HYPRLAND
 alias hyprconfig='nvim ~/.config/hypr/hyprland.conf'

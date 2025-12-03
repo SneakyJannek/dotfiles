@@ -1,0 +1,46 @@
+* {
+	border-radius: 10px;
+	border: none;
+}
+
+
+window {
+	font-size: 20px;
+	font-family: "Roboto Mono Medium";
+	background-color: rgba( 50, 50 ,50, 0.9);
+	color: #ffffff; /* Cursor */
+	#border-bottom: 3px solid white;
+}
+
+#entry{
+	padding: 0.25em;
+	/* background-color: #bbccdd; */
+	color: #d0d0d0; /* text inside register list */
+}
+
+#entry:selected {
+	/* background-color: #000000; */
+	color: #090909; /* > */
+	background: linear-gradient(90deg, #bbccdd, #dd77ff);
+}
+
+#text:selected {
+	/* background-color: #d0d0d0; */
+	color: #090909; /* text inside selection */
+}
+
+#inner-box {
+	color: #000000;
+}
+
+/* search */
+#input {
+	background-color: rgba( 50, 50, 50, 0.5); /* background search */
+	color: #ffffff; /* text search */
+	padding: 0.25em;
+}
+
+image{
+	margin-left: .25em;
+	margin-right: .25em;
+}

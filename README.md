@@ -6,9 +6,10 @@ Inside dotfiles folder \
 $ stow .
 
 ## Git cheatsheet
-git init . #exec once \
+#exec once \
+git init . 
 git add foo \
 git commit -m "commit message" \
-git remote add origin 'REPO_URL' #exec once | insert repo url \
-git push origin main \
+#exec once | insert repo url \
+git remote add origin 'REPO_URL' git push origin main \
 git clone 'REPO_URL'

@@ -17,6 +17,7 @@ alias archwiki='wikiman -s arch'
 alias fman='compgen -c | fzf | xargs man'
 alias tree='tree -C'
 alias gitree='tree -I ".git" -a .'
+alias btctl='bluetoothctl'
 
 #HYPRLAND
 alias hyprconfig='nvim ~/.config/hypr/hyprland.conf'

@@ -42,7 +42,7 @@ window#waybar.solo {
 
 #mode, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #custom-weather, #custom-mail {
     margin:     0px 0px 0px 10px;
-    min-width:  20px;
+    min-width:  25px;
 }
 
 #clock {

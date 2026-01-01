@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+#PS1='[\u@\h \w]\$ '
+PS1='\[\e[0;34m\][\u@\h \w]$\[\e[0;39m\] '
+
 #bind '"\t": menu-complete'
 bind '"\e[1;5B": beginning-of-line'
 bind '"\e[1;5A": end-of-line'
@@ -21,5 +24,6 @@ alias btctl='bluetoothctl'
 
 #HYPRLAND
 alias hyprconfig='nvim ~/.config/hypr/hyprland.conf'
+alias hyprkill='hyprctl kill'
 
-PS1='[\u@\h \W]\$ '
+

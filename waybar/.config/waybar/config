@@ -58,15 +58,7 @@
         "on-click": "pavucontrol",
         "tooltip": false
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-    }
-    "custom/spotify": {
+     "custom/spotify": {
         "interval": 1,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/spotify.sh",

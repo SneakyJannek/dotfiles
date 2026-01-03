@@ -21,6 +21,8 @@ alias fman='compgen -c | fzf | xargs man'
 alias tree='tree -C'
 alias gitree='tree -I ".git" -a .'
 alias btctl='bluetoothctl'
+alias JBL-GO-4='~/Public/bluetooth/JBL-GO-4.sh'
+alias ULT-WEAR='~/Public/bluetooth/ULT-WEAR.sh'
 
 #HYPRLAND
 alias hyprconfig='nvim ~/.config/hypr/hyprland.conf'

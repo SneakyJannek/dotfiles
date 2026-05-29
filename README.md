@@ -1,7 +1,7 @@
 ## INFO
 https://www.youtube.com/watch?v=y6XCebnB9gs
 
-## Generate Simlinks
+## Generate Symlinks
 Inside dotfiles folder \
 $ stow .
 

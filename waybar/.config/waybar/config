@@ -19,6 +19,7 @@
     },
     "clock": {
         "format": "{:%d %b %H:%M}",
+        "locale": "de_DE.UTF-8",
         "tooltip": false
     },
     "battery": {

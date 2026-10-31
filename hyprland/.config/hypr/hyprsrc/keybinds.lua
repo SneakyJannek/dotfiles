@@ -1,19 +1,18 @@
+-- Sets "Windows" key as main modifier
 local mainMod = "SUPER"
 
--- Sets "Windows" key as main modifier
-
-hl.bind("CTRL + ALT" .. " + " .. "T", hl.dsp.exec_cmd("kitty"))
-hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd("kitty"))
+hl.bind("CTRL + ALT" .. " + " .. "T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + " .. "Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + " .. "F1", hl.dsp.exec_cmd("/sbin/shutdown -a now"))
 hl.bind(mainMod .. " + " .. "F2", hl.dsp.exec_cmd("/sbin/reboot"))
 hl.bind(mainMod .. " + " .. "L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + " .. "M", hl.dsp.exit())
-hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("nemo"))
+hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + " .. "V", hl.dsp.window.float())
-hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd("wofi --show"))
+hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("vivaldi"))
+hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + " .. "N", hl.dsp.exec_cmd("brave --disable-features=WaylandWpColorManagerV1"))
 hl.bind(mainMod .. " + " .. "I", hl.dsp.exec_cmd("brave --incognito"))
 hl.bind(mainMod .. " + " .. "S", hl.dsp.exec_cmd("spotify-launcher"))
@@ -25,6 +24,9 @@ hl.bind(mainMod .. " + " .. "U", hl.dsp.exec_cmd("signal-desktop"))
 hl.bind(mainMod .. "+ J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. "+ KP_INSERT", hl.dsp.layout("togglesplit"))
 
+
+hl.bind(mainMod .. "+ CTRL + RETURN", hl.dsp.exec_cmd("newterminal"))
+
 -- Screenshot
 hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd("/usr/sbin/hyprshot -m window -m active --clipboard-only"))
 hl.bind(mainMod .. " +  SHIFT + S", hl.dsp.exec_cmd("/usr/sbin/hyprshot -m region -z --clipboard-only"))
@@ -34,7 +36,6 @@ hl.bind(mainMod .. " + " .. "F10", hl.dsp.exec_cmd("/usr/sbin/hyprshot -m output
 hl.bind(mainMod .. " + " .. "K", hl.dsp.exec_cmd("cliphist list| wofi --dmenu --pre-display-cmd echo '%s' | cut -f 2| cliphist decode| wl-copy"))
 
 -- Move window with arrow keys
-
 hl.bind(mainMod .. " + " .. "CTRL" .. " + " .. "left", hl.dsp.window.swap({ direction = "left" }))
 hl.bind(mainMod .. " + " .. "CTRL" .. " + " .. "right", hl.dsp.window.swap({ direction = "right" }))
 hl.bind(mainMod .. " + " .. "CTRL" .. " + " .. "up", hl.dsp.window.swap({ direction = "up" }))
@@ -47,7 +48,6 @@ hl.bind(mainMod .. " + " .. "up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + " .. "down", hl.dsp.focus({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
-
 hl.bind(mainMod .. " + " .. 1, hl.dsp.focus({ workspace = 1 }))
 hl.bind(mainMod .. " + " .. "KP_END", hl.dsp.focus({ workspace = 1 }))
 hl.bind(mainMod .. " + " .. 2, hl.dsp.focus({ workspace = 2 }))
@@ -90,12 +90,10 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. 9, hl.dsp.window.move({ workspac
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "KP_PAGE_UP", hl.dsp.window.move({ workspace = 9 }))
 
 -- Example special workspace (scratchpad)
-
 hl.bind(mainMod .. " + " .. "asciicircum", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "asciicircum", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Resize window through keyboard input
-
 hl.bind(mainMod .. " +  ALT + left",
     hl.dsp.window.resize({ x = -20, y = 0, relative = true }),
     { repeating = true })
@@ -111,18 +109,16 @@ hl.bind(mainMod .. " + ALT + up",
 hl.bind(mainMod .. " + ALT + down",
     hl.dsp.window.resize({ x = 0, y = 20, relative = true }),
     { repeating = true })
--- Scroll through existing workspaces with mainMod + scroll
 
+-- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + " .. "mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + " .. "mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-
 hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
@@ -131,7 +127,6 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true })
 
 -- Requires playerctl
-
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })

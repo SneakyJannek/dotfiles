@@ -1,18 +1,20 @@
 -- refers to $XDG_CONFIG_HOME/hypr/awesomeconf/keybinds.lua
 --require("awesomeconf/keybinds")
 
+require ("./hyprsrc/monitors")
+
 --###############
 --## MONITORS ###
 --###############
 
-require ("./hyprsrc/monitors")
+require ("./hyprsrc/programs")
 
 --#################
 --## MY PROGRAMS ##
 --## AUTOSTART   ##
 --#################
 
-require ("./hyprsrc/programs")
+require ("./hyprsrc/enviroment")
 
 --############################
 --## ENVIRONMENT VARIABLES  ##
@@ -22,16 +24,14 @@ require ("./hyprsrc/programs")
 --## WINDOWS AND WORKSPACES ##
 --############################
 
-require ("./hyprsrc/enviroment")
+require ("./hyprsrc/workspaces")
 
 --################
 --## WORKSPACES ##
 --################
 
-require ("./hyprsrc/workspaces")
+require ("./hyprsrc/keybinds")
 
 --##################
 --## KEYBINDINGS ###
 --##################
-
-require ("./hyprsrc/keybinds")
